@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Your workout — {{ workout.muscle_group }}{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>Your workout plan</h1>
+  <p class="subtitle">{{ workout.notes }}</p>
+  <div class="meta-badges">
+    <span class="badge">{{ workout.muscle_group }}</span>
+    {% if workout.sub_area %}
+    <span class="badge">{{ workout.sub_area }}</span>
+    {% endif %}
+    <span class="badge">{{ workout.difficulty | title }}</span>
+  </div>
+</section>
+
+<section class="card">
+  <table class="sets-table workout-plan-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Exercise</th>
+        <th>Sets</th>
+        <th>Reps</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for exercise in workout.exercises %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td><strong>{{ exercise.name }}</strong></td>
+        <td>{{ exercise.sets }}</td>
+        <td>{{ exercise.reps }}</td>
+        <td class="muted">{{ exercise.notes or "—" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section class="card action-row">
+  <form method="post" action="{{ url_for('generate') }}">
+    <input type="hidden" name="muscle_group" value="{{ workout.muscle_group }}">
+    <input type="hidden" name="sub_area" value="{{ workout.sub_area or '' }}">
+    <input type="hidden" name="difficulty" value="{{ workout.difficulty }}">
+    <button type="submit" class="btn btn-primary">Regenerate</button>
+  </form>
+  <a href="{{ url_for('index') }}" class="btn btn-secondary">New workout</a>
+</section>
+{% endblock %}

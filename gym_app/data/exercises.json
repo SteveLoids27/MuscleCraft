@@ -1,0 +1,242 @@
+{
+  "Chest": {
+    "basic": [
+      {"name": "Machine Chest Press", "sets": 3, "reps": "12", "notes": "Controlled tempo", "targets": ["Middle chest"]},
+      {"name": "Incline Push-up", "sets": 3, "reps": "10", "notes": "Elevate hands for upper chest", "targets": ["Upper chest"]},
+      {"name": "Flat Dumbbell Press", "sets": 3, "reps": "12", "notes": "Full range of motion", "targets": ["Middle chest"]},
+      {"name": "Cable Fly", "sets": 2, "reps": "15", "notes": "Squeeze at the top", "targets": ["Lower chest"]},
+      {"name": "Wall Push-up", "sets": 2, "reps": "15", "notes": "Easy warm-up finisher", "targets": []}
+    ],
+    "intermediate": [
+      {"name": "Incline Dumbbell Press", "sets": 4, "reps": "10", "notes": "Target upper chest", "targets": ["Upper chest"]},
+      {"name": "Flat Barbell Bench Press", "sets": 4, "reps": "8", "notes": "Keep shoulder blades retracted", "targets": ["Middle chest"]},
+      {"name": "Cable Crossover", "sets": 3, "reps": "12", "notes": "Stretch at the bottom", "targets": ["Lower chest"]},
+      {"name": "Dumbbell Fly", "sets": 3, "reps": "12", "notes": "Slight bend in elbows", "targets": ["Middle chest"]},
+      {"name": "Push-up", "sets": 3, "reps": "15", "notes": "Burnout set", "targets": []}
+    ],
+    "advanced": [
+      {"name": "Incline Barbell Press", "sets": 5, "reps": "6", "notes": "Heavy upper chest focus", "targets": ["Upper chest"]},
+      {"name": "Weighted Dip", "sets": 4, "reps": "8", "notes": "Lean forward for chest", "targets": ["Lower chest"]},
+      {"name": "Flat Barbell Bench Press", "sets": 5, "reps": "5", "notes": "Working sets heavy", "targets": ["Middle chest"]},
+      {"name": "Incline Cable Fly", "sets": 4, "reps": "12", "notes": "Constant tension", "targets": ["Upper chest"]},
+      {"name": "Decline Push-up", "sets": 4, "reps": "12", "notes": "Feet elevated", "targets": ["Lower chest"]},
+      {"name": "Pec Deck", "sets": 3, "reps": "15", "notes": "Finisher", "targets": ["Middle chest"]}
+    ]
+  },
+  "Back": {
+    "basic": [
+      {"name": "Lat Pulldown", "sets": 3, "reps": "12", "notes": "Pull to upper chest", "targets": ["Lats"]},
+      {"name": "Seated Cable Row", "sets": 3, "reps": "12", "notes": "Squeeze shoulder blades", "targets": ["Rhomboids"]},
+      {"name": "Back Extension", "sets": 2, "reps": "15", "notes": "Controlled movement", "targets": ["Lower back"]},
+      {"name": "Face Pull", "sets": 2, "reps": "15", "notes": "Light weight", "targets": ["Traps"]}
+    ],
+    "intermediate": [
+      {"name": "Pull-up", "sets": 4, "reps": "8", "notes": "Full hang to chin over bar", "targets": ["Lats"]},
+      {"name": "Barbell Row", "sets": 4, "reps": "8", "notes": "Flat back", "targets": ["Lats", "Rhomboids"]},
+      {"name": "Single-arm Dumbbell Row", "sets": 3, "reps": "10", "notes": "Each arm", "targets": ["Lats"]},
+      {"name": "Reverse Fly", "sets": 3, "reps": "12", "notes": "Rear delts and upper back", "targets": ["Rhomboids"]},
+      {"name": "Shrug", "sets": 3, "reps": "12", "notes": "Pause at top", "targets": ["Traps"]}
+    ],
+    "advanced": [
+      {"name": "Weighted Pull-up", "sets": 5, "reps": "6", "notes": "Add weight if possible", "targets": ["Lats"]},
+      {"name": "Pendlay Row", "sets": 5, "reps": "5", "notes": "Explosive pull", "targets": ["Lats", "Rhomboids"]},
+      {"name": "Rack Pull", "sets": 4, "reps": "6", "notes": "Heavy top-end pull", "targets": ["Lower back", "Traps"]},
+      {"name": "Chest-supported Row", "sets": 4, "reps": "10", "notes": "Strict form", "targets": ["Rhomboids"]},
+      {"name": "Straight-arm Pulldown", "sets": 4, "reps": "12", "notes": "Lat isolation", "targets": ["Lats"]},
+      {"name": "Farmer Carry", "sets": 3, "reps": "40s", "notes": "Grip and trap endurance", "targets": ["Traps"]}
+    ]
+  },
+  "Shoulders": {
+    "basic": [
+      {"name": "Dumbbell Shoulder Press", "sets": 3, "reps": "12", "notes": "Seated or standing", "targets": ["Front delts"]},
+      {"name": "Lateral Raise", "sets": 3, "reps": "15", "notes": "Light weight", "targets": ["Side delts"]},
+      {"name": "Front Raise", "sets": 2, "reps": "12", "notes": "Alternate arms", "targets": ["Front delts"]},
+      {"name": "Band Pull-apart", "sets": 2, "reps": "20", "notes": "Rear delt activation", "targets": ["Rear delts"]}
+    ],
+    "intermediate": [
+      {"name": "Overhead Press", "sets": 4, "reps": "8", "notes": "Brace core", "targets": ["Front delts"]},
+      {"name": "Lateral Raise", "sets": 4, "reps": "12", "notes": "Lead with elbows", "targets": ["Side delts"]},
+      {"name": "Reverse Pec Deck", "sets": 3, "reps": "12", "notes": "Rear delt focus", "targets": ["Rear delts"]},
+      {"name": "Arnold Press", "sets": 3, "reps": "10", "notes": "Full rotation", "targets": ["Front delts", "Side delts"]},
+      {"name": "Upright Row", "sets": 3, "reps": "10", "notes": "Wide grip", "targets": ["Side delts", "Traps"]}
+    ],
+    "advanced": [
+      {"name": "Push Press", "sets": 5, "reps": "5", "notes": "Use leg drive", "targets": ["Front delts"]},
+      {"name": "Cable Lateral Raise", "sets": 4, "reps": "12", "notes": "Constant tension", "targets": ["Side delts"]},
+      {"name": "Behind-neck Press", "sets": 4, "reps": "8", "notes": "Only if mobility allows", "targets": ["Front delts"]},
+      {"name": "Face Pull", "sets": 4, "reps": "15", "notes": "External rotation", "targets": ["Rear delts"]},
+      {"name": "Lu Raise", "sets": 3, "reps": "12", "notes": "Front and side delts", "targets": ["Front delts", "Side delts"]},
+      {"name": "Barbell Shrug", "sets": 4, "reps": "10", "notes": "Heavy traps", "targets": ["Traps"]}
+    ]
+  },
+  "Biceps": {
+    "basic": [
+      {"name": "Dumbbell Curl", "sets": 3, "reps": "12", "notes": "Alternate arms", "targets": []},
+      {"name": "Hammer Curl", "sets": 3, "reps": "12", "notes": "Neutral grip", "targets": []},
+      {"name": "Cable Curl", "sets": 2, "reps": "15", "notes": "Steady tempo", "targets": []},
+      {"name": "Band Curl", "sets": 2, "reps": "20", "notes": "Finisher", "targets": []}
+    ],
+    "intermediate": [
+      {"name": "Barbell Curl", "sets": 4, "reps": "10", "notes": "No swinging", "targets": []},
+      {"name": "Incline Dumbbell Curl", "sets": 3, "reps": "10", "notes": "Full stretch", "targets": []},
+      {"name": "Preacher Curl", "sets": 3, "reps": "12", "notes": "Strict reps", "targets": []},
+      {"name": "Concentration Curl", "sets": 3, "reps": "12", "notes": "Each arm", "targets": []}
+    ],
+    "advanced": [
+      {"name": "Cheat Curl", "sets": 4, "reps": "8", "notes": "Controlled cheat on last reps", "targets": []},
+      {"name": "Spider Curl", "sets": 4, "reps": "10", "notes": "Peak contraction", "targets": []},
+      {"name": "21s Curl", "sets": 3, "reps": "21", "notes": "7+7+7 method", "targets": []},
+      {"name": "Reverse Curl", "sets": 4, "reps": "12", "notes": "Forearm involvement", "targets": []},
+      {"name": "Cable Hammer Curl", "sets": 4, "reps": "12", "notes": "Drop set last set", "targets": []}
+    ]
+  },
+  "Triceps": {
+    "basic": [
+      {"name": "Triceps Pushdown", "sets": 3, "reps": "12", "notes": "Elbows pinned", "targets": []},
+      {"name": "Overhead Dumbbell Extension", "sets": 3, "reps": "12", "notes": "Both hands", "targets": []},
+      {"name": "Bench Dip", "sets": 2, "reps": "12", "notes": "Feet on floor", "targets": []},
+      {"name": "Kickback", "sets": 2, "reps": "15", "notes": "Each arm", "targets": []}
+    ],
+    "intermediate": [
+      {"name": "Close-grip Bench Press", "sets": 4, "reps": "8", "notes": "Elbows tucked", "targets": []},
+      {"name": "Skull Crusher", "sets": 3, "reps": "10", "notes": "Lower to forehead", "targets": []},
+      {"name": "Rope Pushdown", "sets": 3, "reps": "12", "notes": "Spread at bottom", "targets": []},
+      {"name": "Diamond Push-up", "sets": 3, "reps": "12", "notes": "Bodyweight option", "targets": []}
+    ],
+    "advanced": [
+      {"name": "Weighted Dip", "sets": 5, "reps": "8", "notes": "Upright torso for triceps", "targets": []},
+      {"name": "JM Press", "sets": 4, "reps": "8", "notes": "Hybrid press/extension", "targets": []},
+      {"name": "Overhead Cable Extension", "sets": 4, "reps": "12", "notes": "Long head focus", "targets": []},
+      {"name": "Tate Press", "sets": 3, "reps": "12", "notes": "Lying on bench", "targets": []},
+      {"name": "Dip Machine", "sets": 4, "reps": "10", "notes": "Heavy stack", "targets": []}
+    ]
+  },
+  "Forearms": {
+    "basic": [
+      {"name": "Wrist Curl", "sets": 3, "reps": "15", "notes": "Palm up", "targets": []},
+      {"name": "Reverse Wrist Curl", "sets": 3, "reps": "15", "notes": "Palm down", "targets": []},
+      {"name": "Farmer Hold", "sets": 2, "reps": "30s", "notes": "Heavy dumbbells", "targets": []},
+      {"name": "Plate Pinch", "sets": 2, "reps": "20s", "notes": "Thumb and fingers", "targets": []}
+    ],
+    "intermediate": [
+      {"name": "Reverse Curl", "sets": 4, "reps": "12", "notes": "Barbell or EZ bar", "targets": []},
+      {"name": "Hammer Curl", "sets": 3, "reps": "12", "notes": "Brachialis focus", "targets": []},
+      {"name": "Behind-back Wrist Curl", "sets": 3, "reps": "15", "notes": "Barbell", "targets": []},
+      {"name": "Towel Pull-up", "sets": 3, "reps": "8", "notes": "Grip challenge", "targets": []}
+    ],
+    "advanced": [
+      {"name": "Fat Grip Dead Hang", "sets": 4, "reps": "45s", "notes": "Max time", "targets": []},
+      {"name": "Wrist Roller", "sets": 4, "reps": "2 rolls", "notes": "Up and down", "targets": []},
+      {"name": "Heavy Farmer Walk", "sets": 4, "reps": "40m", "notes": "Tight grip", "targets": []},
+      {"name": "Reverse Curl", "sets": 4, "reps": "10", "notes": "Heavy", "targets": []},
+      {"name": "Gripper Squeeze", "sets": 3, "reps": "15", "notes": "Each hand", "targets": []}
+    ]
+  },
+  "Abs / Core": {
+    "basic": [
+      {"name": "Dead Bug", "sets": 3, "reps": "12", "notes": "Each side", "targets": ["Deep core"]},
+      {"name": "Crunch", "sets": 3, "reps": "15", "notes": "Upper abs", "targets": ["Upper abs"]},
+      {"name": "Plank", "sets": 3, "reps": "30s", "notes": "Neutral spine", "targets": ["Deep core"]},
+      {"name": "Bird Dog", "sets": 2, "reps": "10", "notes": "Each side", "targets": ["Lower abs"]}
+    ],
+    "intermediate": [
+      {"name": "Hanging Knee Raise", "sets": 4, "reps": "12", "notes": "Lower abs", "targets": ["Lower abs"]},
+      {"name": "Cable Crunch", "sets": 3, "reps": "15", "notes": "Upper abs", "targets": ["Upper abs"]},
+      {"name": "Russian Twist", "sets": 3, "reps": "20", "notes": "Obliques", "targets": ["Obliques"]},
+      {"name": "Ab Wheel Rollout", "sets": 3, "reps": "10", "notes": "Full core", "targets": ["Deep core"]},
+      {"name": "Side Plank", "sets": 3, "reps": "30s", "notes": "Each side", "targets": ["Obliques"]}
+    ],
+    "advanced": [
+      {"name": "Hanging Leg Raise", "sets": 4, "reps": "12", "notes": "Strict form", "targets": ["Lower abs"]},
+      {"name": "Dragon Flag", "sets": 4, "reps": "8", "notes": "Advanced move", "targets": ["Deep core"]},
+      {"name": "Weighted Sit-up", "sets": 4, "reps": "12", "notes": "Plate on chest", "targets": ["Upper abs"]},
+      {"name": "Pallof Press", "sets": 4, "reps": "12", "notes": "Anti-rotation", "targets": ["Obliques"]},
+      {"name": "L-sit", "sets": 3, "reps": "20s", "notes": "Compression strength", "targets": ["Deep core"]},
+      {"name": "Cable Woodchop", "sets": 3, "reps": "12", "notes": "Each side", "targets": ["Obliques"]}
+    ]
+  },
+  "Quads": {
+    "basic": [
+      {"name": "Leg Press", "sets": 3, "reps": "12", "notes": "Feet shoulder width", "targets": []},
+      {"name": "Goblet Squat", "sets": 3, "reps": "12", "notes": "Upright torso", "targets": []},
+      {"name": "Leg Extension", "sets": 3, "reps": "15", "notes": "Squeeze at top", "targets": []},
+      {"name": "Step-up", "sets": 2, "reps": "12", "notes": "Each leg", "targets": []}
+    ],
+    "intermediate": [
+      {"name": "Barbell Back Squat", "sets": 4, "reps": "8", "notes": "Depth to parallel", "targets": []},
+      {"name": "Bulgarian Split Squat", "sets": 3, "reps": "10", "notes": "Each leg", "targets": []},
+      {"name": "Walking Lunge", "sets": 3, "reps": "12", "notes": "Each leg", "targets": []},
+      {"name": "Hack Squat", "sets": 3, "reps": "10", "notes": "Machine or barbell", "targets": []}
+    ],
+    "advanced": [
+      {"name": "Front Squat", "sets": 5, "reps": "5", "notes": "Heavy working sets", "targets": []},
+      {"name": "Pause Squat", "sets": 4, "reps": "6", "notes": "2s pause at bottom", "targets": []},
+      {"name": "Sissy Squat", "sets": 4, "reps": "12", "notes": "Quad isolation", "targets": []},
+      {"name": "Belt Squat", "sets": 4, "reps": "10", "notes": "High volume", "targets": []},
+      {"name": "Pistol Squat", "sets": 3, "reps": "8", "notes": "Each leg", "targets": []}
+    ]
+  },
+  "Hamstrings": {
+    "basic": [
+      {"name": "Lying Leg Curl", "sets": 3, "reps": "12", "notes": "Slow eccentric", "targets": []},
+      {"name": "Romanian Deadlift", "sets": 3, "reps": "10", "notes": "Light dumbbells", "targets": []},
+      {"name": "Glute Bridge", "sets": 3, "reps": "15", "notes": "Hamstring squeeze", "targets": []},
+      {"name": "Good Morning", "sets": 2, "reps": "12", "notes": "Bodyweight or band", "targets": []}
+    ],
+    "intermediate": [
+      {"name": "Romanian Deadlift", "sets": 4, "reps": "8", "notes": "Barbell", "targets": []},
+      {"name": "Seated Leg Curl", "sets": 3, "reps": "12", "notes": "Full contraction", "targets": []},
+      {"name": "Nordic Curl", "sets": 3, "reps": "6", "notes": "Assisted if needed", "targets": []},
+      {"name": "Single-leg RDL", "sets": 3, "reps": "10", "notes": "Each leg", "targets": []}
+    ],
+    "advanced": [
+      {"name": "Stiff-leg Deadlift", "sets": 5, "reps": "6", "notes": "Heavy", "targets": []},
+      {"name": "Glute-ham Raise", "sets": 4, "reps": "10", "notes": "Full range", "targets": []},
+      {"name": "Nordic Curl", "sets": 4, "reps": "8", "notes": "Unassisted", "targets": []},
+      {"name": "Cable Pull-through", "sets": 4, "reps": "12", "notes": "Hip hinge", "targets": []},
+      {"name": "Slider Leg Curl", "sets": 4, "reps": "12", "notes": "Hamstring curl on floor", "targets": []}
+    ]
+  },
+  "Glutes": {
+    "basic": [
+      {"name": "Glute Bridge", "sets": 3, "reps": "15", "notes": "Pause at top", "targets": []},
+      {"name": "Clamshell", "sets": 3, "reps": "15", "notes": "Each side", "targets": []},
+      {"name": "Step-up", "sets": 3, "reps": "12", "notes": "Drive through heel", "targets": []},
+      {"name": "Cable Kickback", "sets": 2, "reps": "15", "notes": "Each leg", "targets": []}
+    ],
+    "intermediate": [
+      {"name": "Hip Thrust", "sets": 4, "reps": "10", "notes": "Barbell or bodyweight", "targets": []},
+      {"name": "Bulgarian Split Squat", "sets": 3, "reps": "10", "notes": "Glute bias", "targets": []},
+      {"name": "Romanian Deadlift", "sets": 4, "reps": "8", "notes": "Hip hinge", "targets": []},
+      {"name": "Sumo Squat", "sets": 3, "reps": "12", "notes": "Wide stance", "targets": []}
+    ],
+    "advanced": [
+      {"name": "Barbell Hip Thrust", "sets": 5, "reps": "6", "notes": "Heavy", "targets": []},
+      {"name": "Deficit Reverse Lunge", "sets": 4, "reps": "10", "notes": "Each leg", "targets": []},
+      {"name": "Cable Pull-through", "sets": 4, "reps": "12", "notes": "Glute squeeze", "targets": []},
+      {"name": "Single-leg Hip Thrust", "sets": 4, "reps": "12", "notes": "Each leg", "targets": []},
+      {"name": "Kettlebell Swing", "sets": 4, "reps": "15", "notes": "Explosive hips", "targets": []}
+    ]
+  },
+  "Calves": {
+    "basic": [
+      {"name": "Standing Calf Raise", "sets": 3, "reps": "15", "notes": "Full stretch", "targets": []},
+      {"name": "Seated Calf Raise", "sets": 3, "reps": "15", "notes": "Soleus focus", "targets": []},
+      {"name": "Calf Press", "sets": 2, "reps": "20", "notes": "On leg press", "targets": []},
+      {"name": "Single-leg Calf Raise", "sets": 2, "reps": "12", "notes": "Each leg", "targets": []}
+    ],
+    "intermediate": [
+      {"name": "Standing Calf Raise", "sets": 4, "reps": "12", "notes": "Heavy", "targets": []},
+      {"name": "Seated Calf Raise", "sets": 4, "reps": "15", "notes": "Slow tempo", "targets": []},
+      {"name": "Donkey Calf Raise", "sets": 3, "reps": "15", "notes": "Machine or partner", "targets": []},
+      {"name": "Jump Rope", "sets": 3, "reps": "60s", "notes": "Endurance", "targets": []}
+    ],
+    "advanced": [
+      {"name": "Heavy Standing Calf Raise", "sets": 5, "reps": "10", "notes": "Pause at stretch", "targets": []},
+      {"name": "Seated Calf Raise", "sets": 5, "reps": "12", "notes": "Drop set last set", "targets": []},
+      {"name": "Single-leg Deficit Raise", "sets": 4, "reps": "12", "notes": "Each leg", "targets": []},
+      {"name": "Smith Machine Calf Raise", "sets": 4, "reps": "15", "notes": "High volume", "targets": []},
+      {"name": "Tibialis Raise", "sets": 3, "reps": "20", "notes": "Shin balance", "targets": []}
+    ]
+  }
+}

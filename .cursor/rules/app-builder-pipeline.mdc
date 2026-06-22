@@ -1,0 +1,16 @@
+---
+description: Milestone-based app building pipeline for gym workout app and other APP_SPEC projects
+alwaysApply: true
+---
+
+# App builder pipeline
+
+When the user is building an app (see `APP_SPEC.md`):
+
+1. **Plan** — Use `app-planner` if no milestone is `in_progress`.
+2. **Build** — Use `app-builder` for exactly one milestone.
+3. **Review** — Use `safe-code-improver` on changed files.
+4. **Test** — Use `app-tester` to verify acceptance criteria.
+5. If tester returns `NEEDS_FIX`, use `app-builder` once more (max 2 fix loops), then stop and report.
+
+Never skip testing. Never implement multiple milestones in one session unless the user explicitly asks.

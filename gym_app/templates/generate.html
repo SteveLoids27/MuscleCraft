@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Workout Generator — Build a plan{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>Generate your workout</h1>
+  <p class="subtitle">Pick a muscle group and difficulty — get a complete plan instantly.</p>
+</section>
+
+{% if error %}
+<div class="alert alert-error">{{ error }}</div>
+{% endif %}
+
+<section class="card">
+  <form class="generator-form" method="post" action="{{ url_for('generate') }}">
+    <div class="form-grid generator-grid">
+      <label>
+        Muscle group
+        <select name="muscle_group" id="muscle_group" required>
+          <option value="">Select muscle group</option>
+          {% for group in muscle_groups %}
+          <option value="{{ group }}" {% if selected and selected.get('muscle_group') == group %}selected{% endif %}>
+            {{ group }}
+          </option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label>
+        Sub-area
+        <select name="sub_area" id="sub_area">
+          <option value="">Any / full group</option>
+        </select>
+      </label>
+
+      <label>
+        Difficulty
+        <select name="difficulty" required>
+          <option value="">Select difficulty</option>
+          {% for level in difficulties %}
+          <option value="{{ level.value }}" {% if selected and selected.get('difficulty') == level.value %}selected{% endif %}>
+            {{ difficulty_labels[level] }}
+          </option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-large">Generate workout</button>
+  </form>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const muscleGroups = {{ muscle_groups_json | safe }};
+  const muscleSelect = document.getElementById("muscle_group");
+  const subAreaSelect = document.getElementById("sub_area");
+  const savedSubArea = {{ (selected.get('sub_area', '') if selected else '') | tojson }};
+
+  function updateSubAreas() {
+    const group = muscleSelect.value;
+    subAreaSelect.innerHTML = '<option value="">Any / full group</option>';
+    if (!group || !muscleGroups[group]) return;
+    for (const area of muscleGroups[group]) {
+      const option = document.createElement("option");
+      option.value = area;
+      option.textContent = area;
+      if (area === savedSubArea) option.selected = true;
+      subAreaSelect.appendChild(option);
+    }
+  }
+
+  muscleSelect.addEventListener("change", updateSubAreas);
+  updateSubAreas();
+</script>
+{% endblock %}

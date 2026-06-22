@@ -1,0 +1,14 @@
+---
+description: After any code change, automatically run safe-code-improver to polish code without breaking behavior
+alwaysApply: true
+---
+
+# Automatic safe code review
+
+After you write or edit any code in this project:
+
+1. **Delegate to the `safe-code-improver` subagent** on the files you changed.
+2. Let it apply only behavior-preserving improvements (naming, clarity, dead code removal, small refactors).
+3. Do not skip this step when you finish a coding task, even if the user did not ask for a review.
+
+If the user only asked a question (no code was changed), do not invoke the subagent.
