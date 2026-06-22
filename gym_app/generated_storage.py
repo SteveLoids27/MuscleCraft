@@ -33,3 +33,6 @@ class GeneratedWorkoutStorage:
             if workout.id == workout_id:
                 return workout
         return None
+
+    def list_all(self) -> list[GeneratedWorkout]:
+        return sorted(self.load_all(), key=lambda workout: workout.created_at, reverse=True)

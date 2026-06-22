@@ -46,9 +46,32 @@ This file is the **iteration guide for Cursor agents** building the workout gene
 | 2 | Template workout generator (no LLM — fallback engine) | `done` |
 | 3 | Generator web UI (dropdowns + results page) | `done` |
 | 4 | LLM workout generator integration | `done` |
-| 5 | Save & view generated workout history | `pending` |
+| 5 | Save & view generated workout history | `done` |
 | 6 | Legacy cleanup (remove logging prototype) | `done` |
-| 7 | Polish, error handling & full test coverage | `pending` |
+| 7 | Polish, error handling & full test coverage | `done` |
+
+---
+
+## Automation — one milestone at a time
+
+The Agent **stops after each milestone** so you can review before continuing.
+
+1. In **Agent mode**, say:
+   ```
+   Build Milestone N from BUILD_PROMPT.md
+   ```
+   Or: `Read BUILD_PROMPT.md and build the next pending milestone.`
+2. Pipeline per milestone: app-builder → safe-code-improver → app-tester → mark `done` in this file.
+3. When the Agent ends with `MILESTONE_COMPLETE`, **stop and review** — do not auto-start the next milestone.
+4. Repeat for the next pending milestone when ready.
+5. When all milestones are `done`, open a PR manually:
+   ```
+   Commit my changes, push to a new branch, and open a PR to main
+   ```
+
+**Prerequisites:** `gh auth login`, git remote (or `gh repo create`), `.env` not committed.
+
+See `.cursor/automation/README.md` for details.
 
 ---
 
@@ -228,9 +251,7 @@ Create prompt template, API client, and mocked tests. Read APP_SPEC.md for outpu
 
 **Goal:** Let users save generated workouts and browse past generations.
 
-**Status:** `pending`
-
-**Depends on:** Milestones 3, 4
+**Status:** `done`
 
 ### Steps
 
@@ -253,10 +274,10 @@ Create prompt template, API client, and mocked tests. Read APP_SPEC.md for outpu
 
 ### Acceptance criteria
 
-- [ ] User can save a generated workout from the results page.
-- [ ] `/workouts` lists saved workouts with muscle group, difficulty, and date.
-- [ ] `/workouts/<id>` shows full exercise detail.
-- [ ] All pytest tests pass.
+- [x] User can save a generated workout from the results page.
+- [x] `/workouts` lists saved workouts with muscle group, difficulty, and date.
+- [x] `/workouts/<id>` shows full exercise detail.
+- [x] All pytest tests pass.
 
 ### Agent prompt
 
@@ -311,7 +332,7 @@ Keep generator features intact. All tests must pass.
 
 **Goal:** Production-ready polish — validation, error messages, UI tweaks, and full test coverage.
 
-**Status:** `pending`
+**Status:** `done`
 
 **Depends on:** All previous milestones
 
@@ -335,11 +356,11 @@ Keep generator features intact. All tests must pass.
 
 ### Acceptance criteria
 
-- [ ] Full flow works: select muscle group + difficulty → generate → view → save → history.
-- [ ] Errors are handled gracefully with clear messages.
-- [ ] Copy workout works on results page.
-- [ ] All pytest tests pass.
-- [ ] `APP_SPEC.md` "Done when" criteria are met.
+- [x] Full flow works: select muscle group + difficulty → generate → view → save → history.
+- [x] Errors are handled gracefully with clear messages.
+- [x] Copy workout works on results page.
+- [x] All pytest tests pass.
+- [x] `APP_SPEC.md` "Done when" criteria are met.
 
 ### Agent prompt
 
@@ -385,9 +406,9 @@ Build Milestone 3 from BUILD_PROMPT.md
 
 From `APP_SPEC.md` — the app is complete when:
 
-- [ ] User selects muscle group + difficulty and **generates a workout** as the main output.
-- [ ] Generated plan shows exercises with sets/reps (and notes).
-- [ ] LLM generation works with template fallback.
-- [ ] User can save and view generated workout history.
-- [ ] Legacy logging code is removed.
-- [ ] All pytest tests pass.
+- [x] User selects muscle group + difficulty and **generates a workout** as the main output.
+- [x] Generated plan shows exercises with sets/reps (and notes).
+- [x] LLM generation works with template fallback.
+- [x] User can save and view generated workout history.
+- [x] Legacy logging code is removed.
+- [x] All pytest tests pass.

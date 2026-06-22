@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Your workout — {{ workout.muscle_group }}{% endblock %}
+{% block title %}Saved workout — {{ workout.muscle_group }}{% endblock %}
 
 {% block content %}
 <section class="hero">
-  <h1>Your workout plan</h1>
+  <h1>Saved workout</h1>
   <p class="subtitle">{{ workout.notes }}</p>
   <div class="meta-badges">
+    <span class="badge">{{ workout.created_at.strftime('%Y-%m-%d %H:%M') }}</span>
     <span class="badge">{{ workout.muscle_group }}</span>
     {% if workout.sub_area %}
     <span class="badge">{{ workout.sub_area }}</span>
@@ -14,10 +15,6 @@
     <span class="badge">{{ workout.difficulty | title }}</span>
   </div>
 </section>
-
-{% if notice %}
-<div class="alert alert-notice" role="status">{{ notice }}</div>
-{% endif %}
 
 <section class="card table-card">
   <table class="sets-table workout-plan-table">
@@ -45,20 +42,10 @@
 </section>
 
 <section class="card action-row">
-  <form method="post" action="{{ url_for('save_workout') }}">
-    <input type="hidden" name="workout_json" value='{{ workout.to_dict() | tojson }}'>
-    <button type="submit" class="btn btn-primary">Save workout</button>
-  </form>
   <button type="button" class="btn btn-secondary" id="copy-btn">Copy workout</button>
   <span id="copy-feedback" class="copy-feedback" hidden>Copied!</span>
   <textarea id="copy-source" class="visually-hidden" readonly>{{ copy_text }}</textarea>
-  <form method="post" action="{{ url_for('generate') }}">
-    <input type="hidden" name="muscle_group" value="{{ workout.muscle_group }}">
-    <input type="hidden" name="sub_area" value="{{ workout.sub_area or '' }}">
-    <input type="hidden" name="difficulty" value="{{ workout.difficulty }}">
-    <button type="submit" class="btn btn-secondary">Regenerate</button>
-  </form>
-  <a href="{{ url_for('index') }}" class="btn btn-secondary">New workout</a>
+  <a href="{{ url_for('workouts') }}" class="btn btn-secondary">← Back to history</a>
 </section>
 {% endblock %}
 

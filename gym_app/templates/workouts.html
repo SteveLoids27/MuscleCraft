@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Workout history{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>Saved workouts</h1>
+  <p class="subtitle">Workouts you saved from the generator.</p>
+</section>
+
+<section class="card">
+  {% if workouts %}
+  <ul class="workout-list">
+    {% for workout in workouts %}
+    <li>
+      <a href="{{ url_for('workout_detail', workout_id=workout.id) }}">
+        <span>
+          {{ workout.created_at.strftime('%Y-%m-%d %H:%M') }} —
+          {{ workout.muscle_group }}{% if workout.sub_area %} ({{ workout.sub_area }}){% endif %}
+        </span>
+        <span class="muted">{{ workout.difficulty | title }} · {{ workout.exercises|length }} exercise(s)</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="muted">No saved workouts yet. <a href="{{ url_for('index') }}" class="link">Generate one</a> and click Save workout.</p>
+  {% endif %}
+</section>
+{% endblock %}

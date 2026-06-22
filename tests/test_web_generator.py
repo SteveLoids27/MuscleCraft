@@ -53,14 +53,70 @@ def test_generate_invalid_muscle_group(client) -> None:
     assert b"Unknown muscle group" in response.data
 
 
-@patch("gym_app.web.generate_workout")
-def test_regenerate_button(mock_generate, client) -> None:
-    mock_generate.return_value = GeneratedWorkout(
+def test_generate_missing_muscle_group(client) -> None:
+    response = client.post("/generate", data={"difficulty": "basic"})
+    assert response.status_code == 400
+    assert b"Please select a muscle group" in response.data
+
+
+def test_generate_missing_difficulty(client) -> None:
+    response = client.post("/generate", data={"muscle_group": "Chest"})
+    assert response.status_code == 400
+    assert b"Please select a difficulty" in response.data
+
+
+def test_generate_invalid_sub_area(client) -> None:
+    response = client.post(
+        "/generate",
+        data={
+            "muscle_group": "Chest",
+            "sub_area": "Lats",
+            "difficulty": "basic",
+        },
+    )
+    assert response.status_code == 400
+    assert b"Invalid sub-area" in response.data
+
+
+def test_result_page_has_copy_workout(client) -> None:
+    response = client.post(
+        "/generate",
+        data={"muscle_group": "Chest", "difficulty": "basic"},
+    )
+    assert response.status_code == 200
+    assert b"Copy workout" in response.data
+    assert b"copy-source" in response.data
+    assert b"Incline" in response.data or b"Press" in response.data
+
+
+@patch("gym_app.web.generate_workout_with_notice")
+def test_llm_fallback_notice_on_result_page(mock_generate, client) -> None:
+    workout = GeneratedWorkout(
         muscle_group="Back",
-        sub_area="Lats",
-        difficulty="advanced",
-        exercises=[GeneratedExercise(name="Pull-up", sets=4, reps="8")],
-        notes="Advanced back workout",
+        difficulty="basic",
+        exercises=[GeneratedExercise(name="Row", sets=3, reps="12")],
+        notes="Template back workout",
+    )
+    mock_generate.return_value = (workout, "AI generation failed. Showing a template workout instead.")
+    response = client.post(
+        "/generate",
+        data={"muscle_group": "Back", "difficulty": "basic"},
+    )
+    assert response.status_code == 200
+    assert b"AI generation failed" in response.data
+
+
+@patch("gym_app.web.generate_workout_with_notice")
+def test_regenerate_button(mock_generate, client) -> None:
+    mock_generate.return_value = (
+        GeneratedWorkout(
+            muscle_group="Back",
+            sub_area="Lats",
+            difficulty="advanced",
+            exercises=[GeneratedExercise(name="Pull-up", sets=4, reps="8")],
+            notes="Advanced back workout",
+        ),
+        None,
     )
     response = client.post(
         "/generate",

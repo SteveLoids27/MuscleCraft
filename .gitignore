@@ -238,4 +238,11 @@ htmlcov/
 .DS_Store
 .idea/
 .vscode/
+<<<<<<< HEAD
 >>>>>>> 9678aa4 (Initial commit: Groq-powered gym workout generator.)
+=======
+
+# Automation loop state (local only)
+.cursor/automation/enabled
+.cursor/automation/pr-pushed
+>>>>>>> d39af23 (Complete MuscleCraft: polish, validation, copy, and tests)

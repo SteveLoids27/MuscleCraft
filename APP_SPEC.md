@@ -65,7 +65,7 @@ These define what the application is for.
 - Secondary dropdown (optional): sub-area when the group has multiple targets
 - **Required** before generating a workout
 
-**Status:** `planned`
+**Status:** `done`
 
 ---
 
@@ -85,7 +85,7 @@ These define what the application is for.
 - **Required** before generating a workout
 - Drives exercise selection, volume, and intensity in the generated plan
 
-**Status:** `planned`
+**Status:** `done`
 
 ---
 
@@ -106,7 +106,7 @@ These define what the application is for.
   - Sets and reps per exercise
   - Optional rest notes or form cues
   - Brief workout summary (focus area + difficulty)
-- User can **regenerate**, **copy**, or **save** the plan (save = optional later)
+- User can **regenerate**, **copy**, or **save** the plan
 
 **Example flow:**
 
@@ -118,11 +118,10 @@ These define what the application is for.
 
 **Generation approach:**
 
-- **LLM integration (planned):** Use a language model to generate varied, contextual workouts from muscle group + difficulty
-- Prompt includes target muscles, difficulty level, and constraints (e.g. gym vs bodyweight TBD)
+- **LLM integration (Groq):** Language model generates varied workouts; falls back to templates if unavailable
 - API key via environment variable (not committed to the repo)
 
-**Status:** `planned`
+**Status:** `done`
 
 ---
 
@@ -136,9 +135,9 @@ See [BUILD_PROMPT.md](./BUILD_PROMPT.md) for the full 7-milestone build plan and
 | 2 | Template workout generator (fallback) | Core | done |
 | 3 | Generator web UI (dropdowns + results) | Core | done |
 | 4 | LLM integration (Groq) | Core | done |
-| 5 | Save / view generated history | Secondary | planned |
+| 5 | Save / view generated history | Secondary | done |
 | 6 | Legacy logging cleanup | — | done |
-| 7 | Polish & tests | — | pending |
+| 7 | Polish & tests | — | done |
 
 ---
 
@@ -148,6 +147,9 @@ See [BUILD_PROMPT.md](./BUILD_PROMPT.md) for the full 7-milestone build plan and
 |-------|--------|-------------|
 | `/` | GET | Generator home — muscle group + difficulty dropdowns |
 | `/generate` | POST | Generate workout from selections (main output) |
+| `/workouts/save` | POST | Save a generated workout |
+| `/workouts` | GET | List saved generated workouts |
+| `/workouts/<id>` | GET | View a saved generated workout |
 
 ---
 
@@ -183,30 +185,18 @@ GeneratedExercise
 
 ---
 
-## Planned routes (Milestone 5)
+## Storage
 
-| Route | Method | Description |
-|-------|--------|-------------|
-| `/` | GET | **Generator home** — muscle group + difficulty dropdowns |
-| `/generate` | POST | Generate workout from selections (main output) |
-| `/workouts` | GET | Optional: saved generated workouts |
-| `/workouts/<id>` | GET | View a saved generated workout |
-
----
+- Generated workouts: `~/.gym_workouts/generated.json`
 
 ## Done when
 
-- User can select muscle group + difficulty and **generate a workout** as the main output
-- Generated plan shows exercises with sets/reps
-- All pytest tests pass
-
----
-
-## Storage
-
-- Generated workouts: `~/.gym_workouts/generated.json` (planned for Milestone 5)
-
----
+- [x] User selects muscle group + difficulty and **generates a workout** as the main output
+- [x] Generated plan shows exercises with sets/reps (and notes)
+- [x] LLM generation works with template fallback
+- [x] User can save and view generated workout history
+- [x] Legacy logging code is removed
+- [x] All pytest tests pass
 
 ## Future ideas (not yet scheduled)
 

@@ -124,6 +124,21 @@ def generate_workout(
     prefer_llm: bool = True,
 ) -> GeneratedWorkout:
     """Generate a workout via Groq when configured, else use templates."""
+    workout, _notice = generate_workout_with_notice(
+        muscle_group, sub_area, difficulty, prefer_llm=prefer_llm
+    )
+    return workout
+
+
+def generate_workout_with_notice(
+    muscle_group: str,
+    sub_area: str | None,
+    difficulty: str,
+    *,
+    prefer_llm: bool = True,
+) -> tuple[GeneratedWorkout, str | None]:
+    """Return workout plus an optional user-facing notice (e.g. LLM fallback)."""
+    notice: str | None = None
     if prefer_llm:
         from gym_app.llm_generator import (
             LLMGenerationError,
@@ -133,8 +148,11 @@ def generate_workout(
 
         if get_groq_api_key():
             try:
-                return generate_workout_with_groq(muscle_group, sub_area, difficulty)
+                return generate_workout_with_groq(muscle_group, sub_area, difficulty), None
             except LLMGenerationError:
-                pass
+                notice = "AI generation failed. Showing a template workout instead."
 
-    return generate_workout_from_template(muscle_group, sub_area, difficulty)
+    return (
+        generate_workout_from_template(muscle_group, sub_area, difficulty),
+        notice,
+    )

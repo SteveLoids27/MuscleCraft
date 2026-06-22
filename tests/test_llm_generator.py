@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from gym_app.generator import generate_workout
+from gym_app.generator import generate_workout, generate_workout_with_notice
 from gym_app.llm_generator import (
     LLMGenerationError,
     _build_user_prompt,
@@ -100,3 +100,14 @@ def test_generate_workout_uses_groq_when_available(mock_key, mock_groq) -> None:
 def test_generate_workout_falls_back_on_llm_error(mock_key, mock_groq) -> None:
     workout = generate_workout("Chest", "Upper chest", "intermediate")
     assert len(workout.exercises) >= 4
+
+
+@patch("gym_app.llm_generator.generate_workout_with_groq", side_effect=LLMGenerationError("fail"))
+@patch("gym_app.llm_generator.get_groq_api_key", return_value="test-key")
+def test_generate_workout_with_notice_reports_llm_fallback(mock_key, mock_groq) -> None:
+    workout, notice = generate_workout_with_notice(
+        "Chest", "Upper chest", "intermediate", prefer_llm=True
+    )
+    assert len(workout.exercises) >= 4
+    assert notice is not None
+    assert "template" in notice.lower()

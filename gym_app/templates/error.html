@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} — Workout Generator{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>{{ title }}</h1>
+  <p class="subtitle">{{ message }}</p>
+</section>
+
+<section class="card action-row">
+  <a href="{{ back_url }}" class="btn btn-primary">Go back</a>
+  <a href="{{ url_for('index') }}" class="btn btn-secondary">Generate workout</a>
+</section>
+{% endblock %}

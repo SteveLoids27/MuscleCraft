@@ -9,14 +9,18 @@
 </section>
 
 {% if error %}
-<div class="alert alert-error">{{ error }}</div>
+<div class="alert alert-error" role="alert">{{ error }}</div>
+{% endif %}
+
+{% if notice %}
+<div class="alert alert-notice" role="status">{{ notice }}</div>
 {% endif %}
 
 <section class="card">
-  <form class="generator-form" method="post" action="{{ url_for('generate') }}">
+  <form class="generator-form" method="post" action="{{ url_for('generate') }}" id="generate-form">
     <div class="form-grid generator-grid">
       <label>
-        Muscle group
+        Muscle group <span class="required">*</span>
         <select name="muscle_group" id="muscle_group" required>
           <option value="">Select muscle group</option>
           {% for group in muscle_groups %}
@@ -28,14 +32,14 @@
       </label>
 
       <label>
-        Sub-area
+        Sub-area <span class="optional">(optional)</span>
         <select name="sub_area" id="sub_area">
           <option value="">Any / full group</option>
         </select>
       </label>
 
       <label>
-        Difficulty
+        Difficulty <span class="required">*</span>
         <select name="difficulty" required>
           <option value="">Select difficulty</option>
           {% for level in difficulties %}
@@ -47,7 +51,7 @@
       </label>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-large">Generate workout</button>
+    <button type="submit" class="btn btn-primary btn-large" id="generate-btn">Generate workout</button>
   </form>
 </section>
 {% endblock %}
@@ -74,5 +78,13 @@
 
   muscleSelect.addEventListener("change", updateSubAreas);
   updateSubAreas();
+
+  const form = document.getElementById("generate-form");
+  const generateBtn = document.getElementById("generate-btn");
+  form.addEventListener("submit", () => {
+    generateBtn.disabled = true;
+    generateBtn.textContent = "Generating…";
+    generateBtn.classList.add("is-loading");
+  });
 </script>
 {% endblock %}
