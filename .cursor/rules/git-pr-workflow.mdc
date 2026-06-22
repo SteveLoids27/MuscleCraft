@@ -1,0 +1,44 @@
+---
+description: Git branch and PR workflow — build on dev-Steve, push, open PR to main
+alwaysApply: true
+---
+
+# Git & PR workflow (MuscleCraft)
+
+Remote: `git@github-steveloids27:SteveLoids27/MuscleCraft.git`  
+Use the `github-steveloids27` SSH host so pushes authenticate as **SteveLoids27** (not steveloidsCV).
+
+## Default branch for new work
+
+**`dev-Steve`** — all new features and milestones are built here.
+
+## When the user asks to build a new feature
+
+1. **Branch** — `git checkout dev-Steve` and `git pull origin dev-Steve` (rebase if needed).
+2. **Implement** — follow app-builder pipeline (plan → build → safe-code-improver → app-tester).
+3. **Test** — `python3 -m pytest -v` must pass before commit.
+4. **Commit** — only when the user asks to commit; never commit `.env` or secrets.
+5. **Push** — `git push -u origin dev-Steve` (use `github-steveloids27` remote URL).
+6. **PR** — open a pull request **into `main`** when the user asks (or when feature is complete):
+   ```bash
+   gh pr create --base main --head dev-Steve \
+     --title "<short feature title>" \
+     --body "## Summary\n- ...\n\n## Test plan\n- [ ] pytest passes\n- [ ] manual smoke test"
+   ```
+7. **Report** — return the PR URL to the user.
+
+## Do not
+
+- Push feature work directly to `main` unless the user explicitly requests it.
+- Force-push `main`.
+- Amend commits that were already pushed unless the user explicitly asks.
+
+## After a PR is merged
+
+Sync `dev-Steve` with `main` before the next feature:
+
+```bash
+git checkout dev-Steve
+git pull origin main --rebase
+git push origin dev-Steve
+```

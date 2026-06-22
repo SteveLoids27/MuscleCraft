@@ -26,15 +26,37 @@ When the Agent ends with `MILESTONE_COMPLETE`, **review the changes** before sta
 4. `app-tester` — `python3 -m pytest -v`
 5. Mark milestone `done` in `BUILD_PROMPT.md`
 
+## Git workflow (MuscleCraft)
+
+| Branch | Purpose |
+|--------|---------|
+| `main` | Production-ready code (reviewed via PR) |
+| `dev-Steve` | Active development — **build all new features here** |
+
+Remote: `git@github-steveloids27:SteveLoids27/MuscleCraft.git`
+
+### Per feature
+
+1. Work on `dev-Steve`
+2. Run `python3 -m pytest -v`
+3. Commit and push: `git push origin dev-Steve`
+4. Open PR into `main` for review
+
+In Agent mode:
+
+```
+Build <feature> on dev-Steve, push, and open a PR to main
+```
+
 ## Open a PR (manual, when ready)
 
-When all milestones are done:
+When a feature or milestone is complete on `dev-Steve`:
 
 ```
-Commit my changes, push to a new branch, and open a PR to main
+Push dev-Steve and open a PR to main for review
 ```
 
-Prerequisites: `gh auth login`, git remote configured, never commit `.env`.
+Prerequisites: `gh auth login`, SSH via `github-steveloids27`, never commit `.env`.
 
 ## Stop / disable
 

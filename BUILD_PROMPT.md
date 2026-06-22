@@ -64,10 +64,12 @@ The Agent **stops after each milestone** so you can review before continuing.
 2. Pipeline per milestone: app-builder → safe-code-improver → app-tester → mark `done` in this file.
 3. When the Agent ends with `MILESTONE_COMPLETE`, **stop and review** — do not auto-start the next milestone.
 4. Repeat for the next pending milestone when ready.
-5. When all milestones are `done`, open a PR manually:
+5. When all milestones are `done`, push `dev-Steve` and open a PR into `main` for review:
    ```
-   Commit my changes, push to a new branch, and open a PR to main
+   Push dev-Steve and open a PR to main for review
    ```
+
+**Git workflow:** New features are built on branch `dev-Steve`, pushed to `origin`, then merged via PR into `main`. See `.cursor/rules/git-pr-workflow.mdc`.
 
 **Prerequisites:** `gh auth login`, git remote (or `gh repo create`), `.env` not committed.
 
